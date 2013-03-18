@@ -89,3 +89,8 @@ function search() {
   find $dir -name "$file" -exec grep -d skip -ihn $string {} \; ;
 }
 
+## Command history configuration
+#
+HISTFILE=~/.histfile
+HISTSIZE=100000
+SAVEHIST=1000000
