@@ -89,3 +89,4 @@ function search() {
   find $dir -name "$file" -exec grep -d skip -ihn $string {} \; ;
 }
 
+unsetopt correct_all
