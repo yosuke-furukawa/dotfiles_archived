@@ -6,6 +6,7 @@ if has('vim_starting')
   call neobundle#rc(expand('~/.vim/bundle/'))
 endif
 NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/vimfiler'
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'vim-jp/vimdoc-ja'
@@ -19,6 +20,7 @@ NeoBundle 'hotchpotch/perldoc-vim'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'synboo/project.vim'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'sudo.vim'
 
 filetype on
 filetype indent on
@@ -101,6 +103,11 @@ function InsertTabWrapper()
 endfunction
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 
+" 保管候補のポップアップの色設定
+hi Pmenu cterm=NONE ctermfg=white ctermbg=blue
+hi PmenuSbar cterm=NONE ctermbg=white ctermfg=white
+hi PmenuSel cterm=NONE ctermfg=blue ctermbg=white
+
 " Project.vim用設定
 let g:proj_flags = "imstc"
 nmap <silent> <Leader>P <Plug>ToggleProject
@@ -134,3 +141,12 @@ nmap <Leader>r <plug>(quickrun)
 
 " Yで行末までyankする。
 nnoremap Y y$
+
+" VimFilerのセーフモードをオフにする。
+let g:vimfiler_safe_mode_by_default = 0
+
+" vimgrepで検索した後、QuickFixウインドウを自動で開く
+augroup grepopen
+  autocmd QuickfixCmdPost vimgrep cw
+augroup END
+

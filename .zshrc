@@ -85,8 +85,19 @@ function search() {
     dir=$2
     file=$3
     ;;
-  esac  
+  esac
   find $dir -name "$file" -exec grep -d skip -ihn $string {} \; ;
 }
 
+#remove correct command
 unsetopt correct_all
+
+# Command history configuration
+HISTFILE=~/.histfile
+HISTSIZE=100000
+SAVEHIST=1000000
+
+
+if [ -f ~/.projectrc ]; then
+  source ~/.projectrc
+fi

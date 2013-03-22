@@ -16,7 +16,7 @@ git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 # brew
 ruby <(curl -fsSk https://raw.github.com/mxcl/homebrew/go)
 
-brew install mosh
+brew install mobile-shell
 brew install tig
 brew install hub
 
@@ -29,6 +29,15 @@ curl -kL http://xrl.us/pythonbrewinstall | bash
 
 # nodebrew
 curl -L git.io/nodebrew | perl - setup
+
+# zsh
+brew install zsh
+
+# oh-my-zsh
+git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+cp ~/.zshrc ~/.zshrc.orig
+cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+chsh -s /bin/zsh
 
 # install z
 cd $HOME
