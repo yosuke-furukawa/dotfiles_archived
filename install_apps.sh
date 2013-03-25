@@ -16,8 +16,13 @@ git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 # brew
 ruby <(curl -fsSk https://raw.github.com/mxcl/homebrew/go)
 
+# install mosh
 brew install mobile-shell
+
+# install tig
 brew install tig
+
+# install hub
 brew install hub
 
 # perlbrew
@@ -42,3 +47,6 @@ chsh -s /bin/zsh
 # install z
 cd $HOME
 git clone https://github.com/rupa/z.git
+
+# install ack
+brew install ack

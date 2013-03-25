@@ -95,6 +95,8 @@ HISTFILE=~/.histfile
 HISTSIZE=100000
 SAVEHIST=1000000
 
+# pythonbrew locally add
+source $HOME/.pythonbrew/etc/bashrc
 
 if [ -f ~/.projectrc ]; then
   source ~/.projectrc
