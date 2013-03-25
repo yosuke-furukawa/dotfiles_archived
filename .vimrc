@@ -21,6 +21,7 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'synboo/project.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'sudo.vim'
+NeoBundle 'rking/ag.vim'
 
 filetype on
 filetype indent on
