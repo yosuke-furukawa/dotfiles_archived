@@ -48,5 +48,6 @@ chsh -s /bin/zsh
 cd $HOME
 git clone https://github.com/rupa/z.git
 
-# install ack
-brew install ack
+# install ag
+brew install the_silver_searcher
+
