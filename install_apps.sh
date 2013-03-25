@@ -51,3 +51,6 @@ git clone https://github.com/rupa/z.git
 # install ag
 brew install the_silver_searcher
 
+# install zsh-completions
+brew install zsh-completions
+
