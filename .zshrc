@@ -103,3 +103,6 @@ source $HOME/.pythonbrew/etc/bashrc
 if [ -f ~/.projectrc ]; then
   source ~/.projectrc
 fi
+
+# zsh completions
+fpath=(/usr/local/share/zsh-completions $fpath)
