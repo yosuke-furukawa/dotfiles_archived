@@ -65,32 +65,9 @@ keychain id_rsa
 export PATH="$home/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
-#search
-function search() { 
-  dir=.
-  file=*
-  case $# in
-    0)
-    echo usage: search string [dir [file]]
-    ;;
-    1) 
-    string=$1
-    ;;
-    2)
-    string=$1
-    dir=$2
-    ;;
-    3)
-    string=$1
-    dir=$2
-    file=$3
-    ;;
-  esac
-  find $dir -name "$file" -exec grep -d skip -ihn $string {} \; ;
-}
-
 #remove correct command
 unsetopt correct_all
+unsetopt correct
 
 # Command history configuration
 HISTFILE=~/.histfile

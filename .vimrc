@@ -40,6 +40,17 @@ set laststatus=2 "ステータスラインを常に表示
 set list listchars=trail:_ "行の後ろの空白文字を表示
 
 "####
+"# 操作系
+"####
+
+"Yで行末までyankする。
+nnoremap Y y$
+
+" tab移動をLとHで実行する。
+nnoremap L gt
+nnoremap H gT
+
+"####
 "# マウス操作系
 "####
 set mouse=a "マウス操作を有効にする。
@@ -139,9 +150,6 @@ au InsertLeave * hi StatusLine guifg=DarkBlue guibg=DarkGray gui=none ctermfg=Bl
 
 " Quickrun設定
 nmap <Leader>r <plug>(quickrun)
-
-" Yで行末までyankする。
-nnoremap Y y$
 
 " VimFilerのセーフモードをオフにする。
 let g:vimfiler_safe_mode_by_default = 0
