@@ -82,4 +82,8 @@ if [ -f ~/.projectrc ]; then
 fi
 
 # zsh completions
-fpath=(/usr/local/share/zsh-completions $fpath)
+fpath=(/usr/local/share/zsh-completions/src $fpath)
+
+# 補完を有効化
+autoload -Uz compinit
+compinit -u
