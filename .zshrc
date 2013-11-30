@@ -55,10 +55,14 @@ export PATH=~/bin:$PATH
 source ~/.profile
 export PATH=/usr/local/etc/nginx:$PATH
 export PATH=/usr/local/sbin:$PATH
+export PATH=/usr/local/bin:$PATH
+export PATH=/opt/vertica/bin:$PATH
 # forgameview
-export java_options="-xms64m -xmx512m -xss2m"
+#export java_options="-xms64m -xmx512m -xss2m"
 
-keychain id_rsa
+keychain -q id_rsa
+keychain -q community_key
+keychain -q opecommon_key
 . ~/.keychain/$HOST-sh
 
 #renv
@@ -89,3 +93,8 @@ autoload -Uz compinit
 compinit -u
 
 alias be='bundle exec'
+
+# go env
+export GOENVGOROOT=$HOME/.goenvs
+export GOENVTARGET=$HOME/bin
+export GOENVHOME=$HOME/workspace

@@ -22,6 +22,7 @@ NeoBundle 'synboo/project.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'sudo.vim'
 NeoBundle 'rking/ag.vim'
+NeoBundle 'terryma/vim-multiple-cursors'
 
 filetype on
 filetype indent on
@@ -37,7 +38,7 @@ set ruler "ルーラーの表示
 set showcmd "入力中のコマンドをステータンスに表示
 set showmatch "波括弧入力時の対応する括弧を表示
 set laststatus=2 "ステータスラインを常に表示
-set list listchars=trail:_ "行の後ろの空白文字を表示
+"set list listchars=trail:_ "行の後ろの空白文字を表示
 
 "####
 "# 操作系
@@ -49,6 +50,10 @@ nnoremap Y y$
 " tab移動をLとHで実行する。
 nnoremap L gt
 nnoremap H gT
+
+" gjをctrl-jにする。
+nnoremap <C-j>  gj
+nnoremap <C-k>  gk
 
 "####
 "# マウス操作系
