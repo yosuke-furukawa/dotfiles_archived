@@ -58,3 +58,9 @@ brew install zsh-completions
 brew tap phinze/homebrew-cask
 brew install brew-cask
 
+# install dropbox
+brew cask install dropbox
+
+# install chrome
+brew cask install google-chrome
+

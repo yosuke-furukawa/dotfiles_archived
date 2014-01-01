@@ -53,8 +53,14 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/.nodebrew/current/bin:$PATH
+export GOENVTARGET=$HOME/.goenvtarget
+export PATH=$GOENVTARGET:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
+. `brew --prefix`/etc/profile.d/z.sh
+    function precmd () {
+    _z --add "$(pwd -P)"
+}
 # # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
