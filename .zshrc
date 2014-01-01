@@ -14,10 +14,10 @@ ZSH_THEME="robbyrussell"
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
-# Comment this out to disable bi-weekly auto-update checks
+# Uncomment this to disable bi-weekly auto-update checks
 # DISABLE_AUTO_UPDATE="true"
 
-# Uncomment to change how many often would you like to wait before auto-updates occur? (in days)
+# Uncomment to change how often before auto-updates occur? (in days)
 # export UPDATE_ZSH_DAYS=13
 
 # Uncomment following line if you want to disable colors in ls
@@ -26,8 +26,21 @@ ZSH_THEME="robbyrussell"
 # Uncomment following line if you want to disable autosetting terminal title.
 # DISABLE_AUTO_TITLE="true"
 
+# Uncomment following line if you want to disable command autocorrection
+# DISABLE_CORRECTION="true"
+
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 # COMPLETION_WAITING_DOTS="true"
+
+# Uncomment following line if you want to disable marking untracked files under
+# VCS as dirty. This makes repository status check for large repositories much,
+# much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment following line if you want to  shown in the command execution time stamp 
+# in the history command output. The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|
+# yyyy-mm-dd
+# HIST_STAMPS="mm/dd/yyyy"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -36,65 +49,22 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
+# User configuration
 
-_Z_CMD=z
-source ~/z/z.sh
-precmd() {
-    _z --add "$(pwd -P)"
-}
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+# export MANPATH="/usr/local/man:$MANPATH"
 
-# source ~/auto-fu.zsh/auto-fu.zsh
-alias vim="/usr/local/bin/vim"
-alias vi="vim"
-export EDITOR="vim"
-export PATH=~/perl5/perlbrew/bin:$PATH
-export PATH=~/.nodebrew/current/bin:$PATH
-export PATH=~/play-2.0.4:$PATH
-export PATH=~/bin:$PATH
-source ~/.profile
-export PATH=/usr/local/etc/nginx:$PATH
-export PATH=/usr/local/sbin:$PATH
-export PATH=/usr/local/bin:$PATH
-export PATH=/opt/vertica/bin:$PATH
-# forgameview
-#export java_options="-xms64m -xmx512m -xss2m"
+# # Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
 
-keychain -q id_rsa
-keychain -q community_key
-keychain -q opecommon_key
-. ~/.keychain/$HOST-sh
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
 
-#renv
-export PATH="$home/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+# ssh
+# export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-#remove correct command
-unsetopt correct_all
-unsetopt correct
-
-# Command history configuration
-HISTFILE=~/.histfile
-HISTSIZE=100000
-SAVEHIST=1000000
-
-# pythonbrew locally add
-source $HOME/.pythonbrew/etc/bashrc
-
-if [ -f ~/.projectrc ]; then
-  source ~/.projectrc
-fi
-
-# zsh completions
-fpath=(/usr/local/share/zsh-completions/src $fpath)
-
-# 補完を有効化
-autoload -Uz compinit
-compinit -u
-
-alias be='bundle exec'
-
-# go env
-export GOENVGOROOT=$HOME/.goenvs
-export GOENVTARGET=$HOME/bin
-export GOENVHOME=$HOME/workspace

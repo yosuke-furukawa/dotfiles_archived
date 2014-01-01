@@ -54,3 +54,7 @@ brew install the_silver_searcher
 # install zsh-completions
 brew install zsh-completions
 
+# install brew cask
+brew tap phinze/homebrew-cask
+brew install brew-cask
+

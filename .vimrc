@@ -23,6 +23,7 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'sudo.vim'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'terryma/vim-multiple-cursors'
+NeoBundle 'myhere/vim-nodejs-complete'
 
 filetype on
 filetype indent on
@@ -164,3 +165,11 @@ augroup grepopen
   autocmd QuickfixCmdPost vimgrep cw
 augroup END
 
+" Node vim 補完を使う
+autocmd FileType javascript setlocal omnifunc=nodejscomplete#CompleteJS
+if !exists('g:neocomplcache_omni_functions')
+  let g:neocomplcache_omni_functions = {}
+endif
+let g:neocomplcache_omni_functions.javascript = 'nodejscomplete#CompleteJS'
+
+let g:node_usejscomplete = 1
