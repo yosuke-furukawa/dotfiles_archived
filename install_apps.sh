@@ -54,6 +54,9 @@ brew install the_silver_searcher
 # install zsh-completions
 brew install zsh-completions
 
+# install phantomjs
+brew install phantomjs
+
 # install brew cask
 brew tap phinze/homebrew-cask
 brew install brew-cask
