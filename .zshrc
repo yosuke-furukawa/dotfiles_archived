@@ -61,6 +61,11 @@ export PATH=$GOENVTARGET:$PATH
     function precmd () {
     _z --add "$(pwd -P)"
 }
+
+keychain id_rsa
+. ~/.keychain/$HOST-sh
+
+
 # # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'

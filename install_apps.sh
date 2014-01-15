@@ -64,3 +64,8 @@ brew cask install dropbox
 # install chrome
 brew cask install google-chrome
 
+# install lime-chat
+brew cask install lime-chat
+
+# install bazaar
+brew install bzr
