@@ -56,6 +56,12 @@ nnoremap H gT
 nnoremap <C-j>  gj
 nnoremap <C-k>  gk
 
+" ,r で netrwに戻る
+map ,r :Rexplore<CR>
+
+" C-qで全部タブをクローズする
+map <C-q>  :tabo<CR>
+
 "####
 "# マウス操作系
 "####

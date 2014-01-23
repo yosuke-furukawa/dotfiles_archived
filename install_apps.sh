@@ -69,3 +69,9 @@ brew cask install google-chrome
 
 # install NeoBundle
 vim -c ':NeoBundleInstall!' -c ':q!' 
+
+# install lime-chat
+brew cask install lime-chat
+
+# install bazaar
+brew install bzr
