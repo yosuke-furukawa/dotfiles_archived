@@ -67,3 +67,5 @@ brew cask install dropbox
 # install chrome
 brew cask install google-chrome
 
+# install NeoBundle
+vim -c ':NeoBundleInstall!' -c ':q!' 

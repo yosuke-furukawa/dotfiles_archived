@@ -173,3 +173,7 @@ endif
 let g:neocomplcache_omni_functions.javascript = 'nodejscomplete#CompleteJS'
 
 let g:node_usejscomplete = 1
+
+" Golang 設定
+set rtp+=$GOROOT/misc/vim
+
