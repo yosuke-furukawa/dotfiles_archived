@@ -96,8 +96,6 @@ export PATH=/opt/vertica/bin:$PATH
 #export java_options="-xms64m -xmx512m -xss2m"
 
 keychain -q id_rsa
-keychain -q community_key
-keychain -q opecommon_key
 . ~/.keychain/$HOST-sh
 
 #renv
@@ -133,6 +131,9 @@ alias be='bundle exec'
 export GOENVGOROOT=$HOME/.goenvs
 export GOENVTARGET=$HOME/bin
 export GOENVHOME=$HOME/workspace
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$PATH
+
 
 export PATH=$GOROOT/bin:$PATH
 
@@ -160,3 +161,20 @@ function static_httpd {
     erl -eval 'inets:start(), inets:start(httpd, [{server_name, "httpd"}, {server_root, "."}, {document_root, "."}, {port, 5000}])'
   fi
 }
+
+
+# swift env
+export PATH=/Applications/Xcode6-Beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/:$PATH
+
+#percol
+function percol-src () {
+    local selected_dir=$(ghq list --full-path | percol --query "$LBUFFER")
+    if [ -n "$selected_dir" ]; then
+        BUFFER="cd ${selected_dir}"
+        zle accept-line
+    fi
+    zle clear-screen
+}
+zle -N percol-src
+
+bindkey '^S' percol-src
