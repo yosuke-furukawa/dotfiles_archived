@@ -12,18 +12,16 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'vim-jp/vimdoc-ja'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
-NeoBundle 'teramako/jscomplete-vim'
 NeoBundle 'JavaScript-syntax'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'petdance/vim-perl'
-NeoBundle 'hotchpotch/perldoc-vim'
 NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'synboo/project.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'sudo.vim'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'myhere/vim-nodejs-complete'
+NeoBundle 'Blackrush/vim-gocode'
 
 filetype on
 filetype indent on
@@ -132,11 +130,6 @@ hi Pmenu cterm=NONE ctermfg=white ctermbg=blue
 hi PmenuSbar cterm=NONE ctermbg=white ctermfg=white
 hi PmenuSel cterm=NONE ctermfg=blue ctermbg=white
 
-" Project.vim用設定
-let g:proj_flags = "imstc"
-nmap <silent> <Leader>P <Plug>ToggleProject
-nmap <silent> <Leader>p :Project<CR>
-
 " Vimで存在しないフォルダを指定してファイル保存した時に自動で作成する。
 augroup vimrc-auto-mkdir  " {{{
   autocmd!
@@ -182,4 +175,6 @@ let g:node_usejscomplete = 1
 
 " Golang 設定
 set rtp+=$GOROOT/misc/vim
-
+"golint
+exe "set rtp+=" . globpath($GOPATH, "src/github.com/golang/lint/misc/vim")
+set completeopt=menu,preview

@@ -133,9 +133,10 @@ export GOENVTARGET=$HOME/bin
 export GOENVHOME=$HOME/workspace
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$PATH
-
-
 export PATH=$GOROOT/bin:$PATH
+export PATH=$GOBIN:$PATH
+
+
 
 
 function static_httpd {
@@ -168,7 +169,7 @@ export PATH=/Applications/Xcode6-Beta.app/Contents/Developer/Toolchains/XcodeDef
 
 #percol
 function percol-src () {
-    local selected_dir=$(ghq list --full-path | percol --query "$LBUFFER")
+    local selected_dir=$(ghq list --full-path | peco --query "$LBUFFER")
     if [ -n "$selected_dir" ]; then
         BUFFER="cd ${selected_dir}"
         zle accept-line
