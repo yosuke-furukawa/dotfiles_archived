@@ -58,8 +58,7 @@ brew install zsh-completions
 brew install phantomjs
 
 # install brew cask
-brew tap phinze/homebrew-cask
-brew install brew-cask
+brew install caskroom/cask/brew-cask
 
 # install dropbox
 brew cask install dropbox
