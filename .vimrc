@@ -3,25 +3,26 @@ filetype off
 filetype plugin indent off
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
-  call neobundle#rc(expand('~/.vim/bundle/'))
+  call neobundle#begin(expand('~/.vim/bundle/'))
+  NeoBundle 'Shougo/vimproc'
+  NeoBundle 'Shougo/vimfiler'
+  NeoBundle 'Shougo/vimshell'
+  NeoBundle 'Shougo/unite.vim'
+  NeoBundle 'vim-jp/vimdoc-ja'
+  NeoBundle 'Shougo/neocomplcache'
+  NeoBundle 'Shougo/neosnippet'
+  NeoBundle 'JavaScript-syntax'
+  NeoBundle 'pangloss/vim-javascript'
+  NeoBundle 'petdance/vim-perl'
+  NeoBundle 'thinca/vim-quickrun'
+  NeoBundle 'tpope/vim-fugitive'
+  NeoBundle 'sudo.vim'
+  NeoBundle 'rking/ag.vim'
+  NeoBundle 'terryma/vim-multiple-cursors'
+  NeoBundle 'myhere/vim-nodejs-complete'
+  NeoBundle 'Blackrush/vim-gocode'
+  call neobundle#end()
 endif
-NeoBundle 'Shougo/vimproc'
-NeoBundle 'Shougo/vimfiler'
-NeoBundle 'Shougo/vimshell'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'vim-jp/vimdoc-ja'
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'JavaScript-syntax'
-NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'petdance/vim-perl'
-NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'sudo.vim'
-NeoBundle 'rking/ag.vim'
-NeoBundle 'terryma/vim-multiple-cursors'
-NeoBundle 'myhere/vim-nodejs-complete'
-NeoBundle 'Blackrush/vim-gocode'
 
 filetype on
 filetype indent on
@@ -42,6 +43,9 @@ set laststatus=2 "ステータスラインを常に表示
 "####
 "# 操作系
 "####
+
+"swapfile を作らない
+set noswapfile
 
 "Yで行末までyankする。
 nnoremap Y y$

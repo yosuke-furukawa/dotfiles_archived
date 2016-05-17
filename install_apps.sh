@@ -2,7 +2,7 @@
 sudo easy_install Mercurial
 mkdir src
 cd src
-hg clone https://vim.googlecode.com/hg/ vim
+git clone https://github.com/vim/vim.git
 cd vim/
 ./configure --prefix=/usr/local --enable-multibyte --with-features=huge --enable-fontset --enable-cscope --disable-selinux --disable-gui
 make
@@ -10,7 +10,7 @@ sudo make install
 
 # neobundle install
 mkdir -p ~/.vim/bundle
-git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 
 
 # brew
@@ -39,7 +39,7 @@ curl -L git.io/nodebrew | perl - setup
 brew install zsh
 
 # oh-my-zsh
-git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 cp ~/.zshrc ~/.zshrc.orig
 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 chsh -s /bin/zsh
@@ -58,8 +58,7 @@ brew install zsh-completions
 brew install phantomjs
 
 # install brew cask
-brew tap phinze/homebrew-cask
-brew install brew-cask
+brew tap caskroom/cask
 
 # install dropbox
 brew cask install dropbox
@@ -75,3 +74,8 @@ brew cask install lime-chat
 
 # install bazaar
 brew install bzr
+
+# install ack
+brew install ack
+
+
