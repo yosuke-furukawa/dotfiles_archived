@@ -48,3 +48,6 @@ function search() {
   find $dir -name "$file" -exec grep -d skip -IHn $string {} \; ;
 }
 
+
+# added by travis gem
+[ -f /Users/yosuke/.travis/travis.sh ] && source /Users/yosuke/.travis/travis.sh

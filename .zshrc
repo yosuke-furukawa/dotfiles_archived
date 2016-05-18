@@ -55,6 +55,8 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 export GOENVTARGET=$HOME/.goenvtarget
 export PATH=$GOENVTARGET:$PATH
+export PATH=/usr/local/texlive/2014/bin/x86_64-darwin:$PATH
+# export PATH=/usr/texbin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $HOME/z/z.sh
@@ -164,9 +166,6 @@ function static_httpd {
 }
 
 
-# swift env
-export PATH=/Applications/Xcode6-Beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/:$PATH
-
 #percol
 function percol-src () {
     local selected_dir=$(ghq list --full-path | peco --query "$LBUFFER")
@@ -179,3 +178,18 @@ function percol-src () {
 zle -N percol-src
 
 bindkey '^S' percol-src
+
+# added by travis gem
+[ -f /Users/yosuke/.travis/travis.sh ] && source /Users/yosuke/.travis/travis.sh
+
+unsetopt auto_cd
+
+#depot_tools
+export PATH=$HOME/go/src/github.com/yosuke-furukawa/depot_tools:"$PATH"
+
+# The next line updates PATH for the Google Cloud SDK.
+source '/Users/yosuke/google-cloud-sdk/path.zsh.inc'
+
+# The next line enables shell command completion for gcloud.
+source '/Users/yosuke/google-cloud-sdk/completion.zsh.inc'
+
