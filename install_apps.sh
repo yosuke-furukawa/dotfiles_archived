@@ -25,10 +25,6 @@ brew install tig
 # install hub
 brew install hub
 
-# perlbrew
-curl -kL http://install.perlbrew.pl | bash
-curl -L http//cpanmin.us/ | perl - App::cpanminus
-
 # pythonbrew
 curl -kL http://xrl.us/pythonbrewinstall | bash
 
@@ -54,23 +50,14 @@ brew install the_silver_searcher
 # install zsh-completions
 brew install zsh-completions
 
-# install phantomjs
-brew install phantomjs
-
 # install brew cask
 brew tap caskroom/cask
-
-# install dropbox
-brew cask install dropbox
 
 # install chrome
 brew cask install google-chrome
 
 # install NeoBundle
 vim -c ':NeoBundleInstall!' -c ':q!' 
-
-# install lime-chat
-brew cask install lime-chat
 
 # install bazaar
 brew install bzr

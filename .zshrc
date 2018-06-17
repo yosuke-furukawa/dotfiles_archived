@@ -52,10 +52,6 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=$HOME/.nodebrew/current/bin:$PATH
-export GOENVTARGET=$HOME/.goenvtarget
-export PATH=$GOENVTARGET:$PATH
-export PATH=/usr/local/texlive/2014/bin/x86_64-darwin:$PATH
 # export PATH=/usr/texbin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -63,10 +59,6 @@ source $HOME/z/z.sh
 function precmd () {
     _z --add "$(pwd -P)"
 }
-
-keychain id_rsa
-. ~/.keychain/$HOST-sh
-
 
 # # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -85,24 +77,12 @@ keychain id_rsa
 alias vim="/usr/local/bin/vim"
 alias vi="vim"
 export EDITOR="vim"
-export PATH=~/perl5/perlbrew/bin:$PATH
 export PATH=~/.nodebrew/current/bin:$PATH
-export PATH=~/play-2.0.4:$PATH
 export PATH=~/bin:$PATH
 source ~/.profile
 export PATH=/usr/local/etc/nginx:$PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH=/usr/local/bin:$PATH
-export PATH=/opt/vertica/bin:$PATH
-# forgameview
-#export java_options="-xms64m -xmx512m -xss2m"
-
-keychain -q id_rsa
-. ~/.keychain/$HOST-sh
-
-#renv
-export PATH="$home/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
 
 #remove correct command
 unsetopt correct_all
@@ -113,12 +93,6 @@ HISTFILE=~/.histfile
 HISTSIZE=1000000
 SAVEHIST=1000000
 
-# pythonbrew locally add
-source $HOME/.pythonbrew/etc/bashrc
-
-if [ -f ~/.projectrc ]; then
-  source ~/.projectrc
-fi
 
 # zsh completions
 fpath=(/usr/local/share/zsh-completions/src $fpath)
@@ -127,19 +101,9 @@ fpath=(/usr/local/share/zsh-completions/src $fpath)
 autoload -Uz compinit
 compinit -u
 
-alias be='bundle exec'
-
 # go env
-export GOENVGOROOT=$HOME/.goenvs
-export GOENVTARGET=$HOME/bin
-export GOENVHOME=$HOME/workspace
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$PATH
-export PATH=$GOROOT/bin:$PATH
-export PATH=$GOBIN:$PATH
-
-
-
 
 function static_httpd {
   if type plackup > /dev/null; then
@@ -193,3 +157,7 @@ source '/Users/yosuke/google-cloud-sdk/path.zsh.inc'
 # The next line enables shell command completion for gcloud.
 source '/Users/yosuke/google-cloud-sdk/completion.zsh.inc'
 
+[[ -s /Users/yosuke/.rsvm/rsvm.sh ]] && . /Users/yosuke/.rsvm/rsvm.sh # This loads RSVM
+
+# rsvm
+source '/Users/yosuke/.rsvm/rsvm.sh'
